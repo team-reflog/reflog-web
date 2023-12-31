@@ -1,7 +1,7 @@
 import React from 'react';
 import {LoginPage} from "./login/LoginPage";
 import {Box, Button, Flex, Heading, HStack, Text} from "@chakra-ui/react";
-import {Link as RouterLink} from "react-router-dom";
+import {Link as RouterLink, Route, Routes} from "react-router-dom";
 
 const App = () => {
     return (
@@ -27,7 +27,9 @@ const App = () => {
             </Flex>
 
             <Box width={960} mt={"60px"}>
-                <LoginPage/>
+                <Routes>
+                    <Route path={"/login"} element={<LoginPage/>}/>
+                </Routes>
             </Box>
         </Flex>
     );
