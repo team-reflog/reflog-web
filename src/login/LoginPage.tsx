@@ -27,7 +27,7 @@ export const LoginPage = () => {
                     <Button colorScheme={"teal"} width={"100%"}>로그인</Button>
                 </VStack>
                 <VStack>
-                    <Text>아직 Reflog의 회원이 아니신가요? <ChakraLink as={RouterLink} to={"/"} color={"teal.500"}>회원가입</ChakraLink>
+                    <Text>아직 Reflog의 회원이 아니신가요? <ChakraLink as={RouterLink} to={"/join"} color={"teal.500"}>회원가입</ChakraLink>
                     </Text>
                     <Text>아이디, 비밀번호가 기억나지 않는다면, <ChakraLink as={RouterLink} to={"/"} color={"teal.500"}>아이디/비밀번호 찾기</ChakraLink>
                     </Text>
