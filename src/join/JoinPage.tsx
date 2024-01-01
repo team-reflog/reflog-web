@@ -6,7 +6,6 @@ import {
     FormLabel,
     Heading,
     Input,
-    Text,
     useToast,
     VStack
 } from "@chakra-ui/react";

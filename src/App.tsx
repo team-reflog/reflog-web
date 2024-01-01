@@ -4,6 +4,8 @@ import {Box, Flex} from "@chakra-ui/react";
 import {Route, Routes} from "react-router-dom";
 import {HeaderNavigation} from "./layout/HeaderNavigation";
 import {JoinPage} from "./join/JoinPage";
+import {FeedPage} from "./feed/FeedPage";
+import {TeamCreatePage} from "./team/TeamCreatePage";
 
 const App = () => {
     return (
@@ -11,8 +13,10 @@ const App = () => {
             <HeaderNavigation/>
             <Box width={960} mt={"60px"}>
                 <Routes>
+                    <Route path={"/"} element={<FeedPage/>}/>
                     <Route path={"/login"} element={<LoginPage/>}/>
                     <Route path={"/join"} element={<JoinPage/>}/>
+                    <Route path={"/team/new"} element={<TeamCreatePage/>}/>
                 </Routes>
             </Box>
         </Flex>
