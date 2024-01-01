@@ -1,8 +1,13 @@
 import {Button, Flex, Heading, HStack, Text} from "@chakra-ui/react";
 import {Link as RouterLink} from "react-router-dom";
 import React from "react";
+import {useRecoilState} from "recoil";
+import {LoginState, loginState} from "../session/LoginSession";
 
 export const HeaderNavigation = () => {
+
+    const [session, useSession] = useRecoilState<LoginState>(loginState);
+
     return (
         <Flex
             width={"100%"}
@@ -25,7 +30,9 @@ export const HeaderNavigation = () => {
                         <Text>팀 둘러보기</Text>
                     </HStack>
                 </Flex>
-                <RouterLink to={"/login"}><Button variant={"outline"}>로그인</Button></RouterLink>
+                {
+                    session.loggedIn ? "로그인 되었습니다" :  <RouterLink to={"/login"}><Button variant={"outline"}>로그인</Button></RouterLink>
+                }
             </Flex>
         </Flex>
     )
