@@ -22,7 +22,7 @@ export interface LoginRequest {
 
 export const LoginPage = () => {
     const navigate = useNavigate();
-    const [session, setSession] = useRecoilState<LoginState>(loginState);
+    const [, setSession] = useRecoilState<LoginState>(loginState);
 
     const [form, setForm] = useState<LoginRequest>({
         email: "",

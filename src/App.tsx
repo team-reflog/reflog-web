@@ -6,6 +6,7 @@ import {HeaderNavigation} from "./layout/HeaderNavigation";
 import {JoinPage} from "./join/JoinPage";
 import {FeedPage} from "./feed/FeedPage";
 import {TeamCreatePage} from "./team/TeamCreatePage";
+import {Footer} from "./layout/Footer";
 
 const App = () => {
     return (
@@ -19,6 +20,7 @@ const App = () => {
                     <Route path={"/team/new"} element={<TeamCreatePage/>}/>
                 </Routes>
             </Box>
+            <Footer/>
         </Flex>
     );
 }

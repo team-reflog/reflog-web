@@ -4,19 +4,21 @@ import React, {useState} from "react";
 export interface DaySelectButtonProps {
     text: string,
     value: string,
-    setCollection: React.Dispatch<React.SetStateAction<string[]>>
+    adder: (day: string) => void
+    remover: (day: string) => void
 }
 
-export const DaySelectButton = ({text, value, setCollection}: DaySelectButtonProps) => {
+export const DaySelectButton = ({text, value, adder, remover}: DaySelectButtonProps) => {
 
     const [selected, setSelected] = useState<boolean>(false);
 
     const onClick = () => {
-        if (!selected) {
-            setCollection(prev => [...prev, value]);
+        if (selected) {
+            remover(value)
         } else {
-            setCollection(prev => prev.filter(e => e !== value));
+            adder(value)
         }
+
         setSelected(prev => !prev);
     }
 

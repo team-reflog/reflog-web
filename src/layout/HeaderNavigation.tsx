@@ -31,7 +31,7 @@ export const HeaderNavigation = () => {
                     </HStack>
                 </Flex>
                 {
-                    session.loggedIn ? "로그인 되었습니다" :  <RouterLink to={"/login"}><Button variant={"outline"}>로그인</Button></RouterLink>
+                    session.loggedIn ? "마이페이지" :  <RouterLink to={"/login"}><Button variant={"outline"}>로그인</Button></RouterLink>
                 }
             </Flex>
         </Flex>
