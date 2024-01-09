@@ -39,7 +39,7 @@ export const TeamCreatePage = () => {
                     description: "팀 생성에 성공하였습니다.",
                     status: "success",
                     position: "bottom-right",
-                    isClosable: true,
+                    // isClosable: true,
                 })
                 navigate("/teams")
             })
