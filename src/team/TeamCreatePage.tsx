@@ -88,7 +88,7 @@ export const TeamCreatePage = () => {
     }
 
     return (
-        <Flex flexDirection={"column"} align={"center"} gap={"30px"}>
+        <Flex flexDirection={"column"} align={"center"} gap={"30px"} mt={"4em"}>
             <Heading>팀 생성</Heading>
             <VStack width={300} gap={"20px"}>
                 <FormControl isRequired>

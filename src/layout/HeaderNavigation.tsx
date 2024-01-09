@@ -1,4 +1,15 @@
-import {Button, Flex, Heading, HStack, IconButton, Menu, MenuButton, MenuItem, MenuList} from "@chakra-ui/react";
+import {
+    Button, Divider,
+    Flex,
+    Heading,
+    HStack,
+    IconButton,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuList, Tag,
+    Text
+} from "@chakra-ui/react";
 import {Link as RouterLink} from "react-router-dom";
 import React from "react";
 import {useRecoilState} from "recoil";
@@ -7,7 +18,17 @@ import {IoMdMenu} from "react-icons/io";
 
 export const HeaderNavigation = () => {
 
-    const [session] = useRecoilState<LoginState>(loginState);
+    const [session, setSession] = useRecoilState<LoginState>(loginState);
+
+    const onLogoutClicked = () => {
+        setSession({
+            session: {
+                accessToken: "",
+                refreshToken: ""
+            },
+            loggedIn: false
+        });
+    }
 
     return (
         <Flex
@@ -17,7 +38,11 @@ export const HeaderNavigation = () => {
             borderBottom={"1px solid"}
             borderBottomColor={"gray.100"}
             alignItems={"center"}
-            paddingX={"10px"}
+            paddingX={"20px"}
+            backgroundColor={"white"}
+            position={"sticky"}
+            top={"0px"}
+            zIndex={3}
         >
             <Flex
                 alignItems={"center"}
@@ -42,8 +67,17 @@ export const HeaderNavigation = () => {
                                 icon={<IoMdMenu size={30}/>}
                             />
                             <MenuList>
+                                <MenuItem>
+                                    <Flex justifyContent={"space-between"} width={"100%"}>
+                                        <Text>
+                                            알림
+                                        </Text>
+                                        <Tag colorScheme={"red"}>1</Tag>
+                                    </Flex>
+                                </MenuItem>
                                 <MenuItem>팀 관리</MenuItem>
-                                <MenuItem>마이 페이지</MenuItem>
+                                <Divider/>
+                                <MenuItem onClick={onLogoutClicked}>로그아웃</MenuItem>
                             </MenuList>
                         </Menu>
                         :

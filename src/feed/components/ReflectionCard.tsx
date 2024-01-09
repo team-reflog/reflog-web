@@ -9,16 +9,26 @@ import {
 } from "@chakra-ui/react";
 import profileImage from '../../dummy/images/profile.jpeg';
 
+interface ReflectionCardProps {
+    name: string,
+    team: string,
+    reflections: Reflection[]
+}
 
-export const ReflectionCard = () => {
+interface Reflection {
+    topic: string,
+    content: string
+}
+
+export const ReflectionCard = ({name, team, reflections}:ReflectionCardProps) => {
     return (
         <Card>
             <CardHeader>
                 <Flex gap={"16px"} alignItems={"center"} flexWrap={"wrap"}>
-                    <Avatar name='백승윤' src={profileImage}/>
+                    <Avatar name={name} src={profileImage}/>
                     <Box>
-                        <Heading size={"sm"}>백승윤</Heading>
-                        <Text>우아한테크캠프 6기</Text>
+                        <Heading size={"sm"}>{name}</Heading>
+                        <Text>{team}</Text>
                         <Text color={"gray.400"}>14분 전</Text>
                     </Box>
                 </Flex>
@@ -30,21 +40,14 @@ export const ReflectionCard = () => {
             />
             <CardBody>
                 <Flex flexDirection={"column"} gap={"16px"}>
-                    <div>
-                        <Heading size={"sm"}>오늘의 기분은 어떠셨나요?</Heading>
-                        <UnorderedList>
-                            <ListItem>배가 부른 날입니다..</ListItem>
-                        </UnorderedList>
-                    </div>
-
-                    <div>
-                        <Heading size={"sm"}>오늘 공부는 어땠나요?</Heading>
-                        <UnorderedList>
-                            <ListItem>로그인 페이지를 열심히 만들었습니다. 힘드네요.</ListItem>
-                            <ListItem>회원가입 페이지도 만들었어요.</ListItem>
-                            <ListItem>다른 사람들의 회고를 구경할 수 있는 피드 페이지도 만들었습니다.</ListItem>
-                        </UnorderedList>
-                    </div>
+                    {
+                        reflections.map(reflection => (
+                            <div>
+                                <Heading size={"sm"}>{reflection.topic}</Heading>
+                                <Text>{reflection.content}</Text>
+                            </div>
+                        ))
+                    }
                 </Flex>
             </CardBody>
         </Card>

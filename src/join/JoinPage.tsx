@@ -63,7 +63,7 @@ export const JoinPage = () => {
     }
 
     return (
-        <Flex flexDirection={"column"} align={"center"} gap={"30px"}>
+        <Flex flexDirection={"column"} align={"center"} gap={"30px"} mt={"4em"}>
             <Heading>회원가입</Heading>
             <VStack width={300} gap={"20px"}>
                 <FormControl isRequired>

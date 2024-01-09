@@ -47,7 +47,7 @@ export const LoginPage = () => {
     }
 
     return (
-        <Flex flexDirection={"column"} align={"center"} gap={"30px"}>
+        <Flex flexDirection={"column"} align={"center"} gap={"30px"} paddingX={"10px"} mt={"4em"}>
             <Heading>로그인</Heading>
             <VStack width={300} gap={"20px"}>
                 <FormControl>
@@ -76,8 +76,7 @@ export const LoginPage = () => {
                 <Text>아직 Reflog의 회원이 아니신가요? <ChakraLink as={RouterLink} to={"/join"}
                                                         color={"teal.500"}>회원가입</ChakraLink>
                 </Text>
-                <Text>아이디, 비밀번호가 기억나지 않는다면, <ChakraLink as={RouterLink} to={"/"} color={"teal.500"}>아이디/비밀번호
-                    찾기</ChakraLink>
+                <Text>비밀번호를 잊으셨다면, <ChakraLink as={RouterLink} to={"/"} color={"teal.500"}>비밀번호 재발급</ChakraLink>
                 </Text>
             </VStack>
         </Flex>
