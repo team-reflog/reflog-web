@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useLayoutEffect} from "react";
 import {Box, Button, Flex, Heading, Text, VStack} from "@chakra-ui/react";
 import {ReflectionCard} from "../feed/components/ReflectionCard";
 import {useRecoilState} from "recoil";
@@ -11,7 +11,7 @@ export const LandingPage: React.FC = () => {
     const [session] = useRecoilState<LoginState>(loginState);
     const navigate = useNavigate();
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (session.loggedIn) {
             navigate("/feed");
         }

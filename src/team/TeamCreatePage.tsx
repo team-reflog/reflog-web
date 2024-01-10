@@ -17,7 +17,8 @@ import {useNavigate} from "react-router-dom";
 export interface TeamCreateForm {
     name: string,
     description: string,
-    reflectionDays: string[]
+    reflectionDays: string[],
+    nickname: string
 }
 
 export const TeamCreatePage = () => {
@@ -28,7 +29,8 @@ export const TeamCreatePage = () => {
     const [form, setForm] = useState<TeamCreateForm>({
         name: "",
         description: "",
-        reflectionDays: []
+        reflectionDays: [],
+        nickname: ""
     })
 
     const onTeamCreateButtonClicked = () => {
@@ -89,7 +91,7 @@ export const TeamCreatePage = () => {
 
     return (
         <Flex flexDirection={"column"} align={"center"} gap={"30px"} mt={"4em"}>
-            <Heading>팀 생성</Heading>
+            <Heading>팀 만들기</Heading>
             <VStack width={300} gap={"20px"}>
                 <FormControl isRequired>
                     <FormLabel>팀 이름</FormLabel>
@@ -121,6 +123,17 @@ export const TeamCreatePage = () => {
                         onChange={onFormTextAreaChanged}
                     />
                     <FormHelperText>팀에 대한 간략한 소개를 입력해 주세요.</FormHelperText>
+                </FormControl>
+                <FormControl isRequired>
+                    <FormLabel>팀장 닉네임</FormLabel>
+                    <Input
+                        type={"name"}
+                        placeholder={"팀장 닉네임"}
+                        name={"nickname"}
+                        value={form.name}
+                        onChange={onFormChanged}
+                    />
+                    <FormHelperText>팀 내에서 사용할 팀장의 닉네임을 설정해 주세요.</FormHelperText>
                 </FormControl>
                 <Button colorScheme={"teal"} width={"100%"} onClick={onTeamCreateButtonClicked}>팀 생성</Button>
             </VStack>

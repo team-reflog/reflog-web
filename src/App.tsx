@@ -8,6 +8,7 @@ import {FeedPage} from "./feed/FeedPage";
 import {TeamCreatePage} from "./team/TeamCreatePage";
 import {Footer} from "./layout/Footer";
 import {LandingPage} from "./landing/LandingPage";
+import {TeamManagePage} from "./team/TeamManagePage";
 
 const App = () => {
     console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
@@ -20,7 +21,8 @@ const App = () => {
                     <Route path={"/feed"} element={<FeedPage/>}/>
                     <Route path={"/login"} element={<LoginPage/>}/>
                     <Route path={"/join"} element={<JoinPage/>}/>
-                    <Route path={"/team/new"} element={<TeamCreatePage/>}/>
+                    <Route path={"/teams"} element={<TeamManagePage/>}/>
+                    <Route path={"/teams/new"} element={<TeamCreatePage/>}/>
                 </Routes>
             </Box>
             <Footer/>

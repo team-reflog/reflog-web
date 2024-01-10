@@ -67,15 +67,19 @@ export const HeaderNavigation = () => {
                                 icon={<IoMdMenu size={30}/>}
                             />
                             <MenuList>
-                                <MenuItem>
-                                    <Flex justifyContent={"space-between"} width={"100%"}>
-                                        <Text>
-                                            알림
-                                        </Text>
-                                        <Tag colorScheme={"red"}>1</Tag>
-                                    </Flex>
-                                </MenuItem>
-                                <MenuItem>팀 관리</MenuItem>
+                                <RouterLink to={"/notifications"}>
+                                    <MenuItem>
+                                        <Flex justifyContent={"space-between"} width={"100%"}>
+                                            <Text>
+                                                알림
+                                            </Text>
+                                            <Tag colorScheme={"red"}>1</Tag>
+                                        </Flex>
+                                    </MenuItem>
+                                </RouterLink>
+                                <RouterLink to={"/teams"}>
+                                    <MenuItem>나의 팀</MenuItem>
+                                </RouterLink>
                                 <Divider/>
                                 <MenuItem onClick={onLogoutClicked}>로그아웃</MenuItem>
                             </MenuList>
