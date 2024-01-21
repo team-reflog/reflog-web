@@ -3,11 +3,12 @@ import React from "react";
 
 
 interface TeamProfileButtonProps {
+    id: number,
     name: string,
     selected: boolean
 }
 
-export const TeamProfileButton = ({name, selected = true}: TeamProfileButtonProps) => {
+export const TeamProfileButton = ({id, name, selected = true}: TeamProfileButtonProps) => {
     return (
         <Flex
             width={"86px"}

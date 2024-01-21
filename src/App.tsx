@@ -9,6 +9,8 @@ import {TeamCreatePage} from "./team/TeamCreatePage";
 import {Footer} from "./layout/Footer";
 import {LandingPage} from "./landing/LandingPage";
 import {TeamManagePage} from "./team/TeamManagePage";
+import {ReflectionCreatePage} from "./reflection/ReflectionCreatePage";
+import {TeamDetailPage} from "./team/TeamDetailPage";
 
 const App = () => {
     console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
@@ -23,6 +25,8 @@ const App = () => {
                     <Route path={"/join"} element={<JoinPage/>}/>
                     <Route path={"/teams"} element={<TeamManagePage/>}/>
                     <Route path={"/teams/new"} element={<TeamCreatePage/>}/>
+                    <Route path={"/teams/:id"} element={<TeamDetailPage/>}/>
+                    <Route path={"/reflections/new"} element={<ReflectionCreatePage/>}/>
                 </Routes>
             </Box>
             <Footer/>

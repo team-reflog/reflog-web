@@ -127,10 +127,10 @@ export const TeamCreatePage = () => {
                 <FormControl isRequired>
                     <FormLabel>팀장 닉네임</FormLabel>
                     <Input
-                        type={"name"}
+                        type={"nickname"}
                         placeholder={"팀장 닉네임"}
                         name={"nickname"}
-                        value={form.name}
+                        value={form.nickname}
                         onChange={onFormChanged}
                     />
                     <FormHelperText>팀 내에서 사용할 팀장의 닉네임을 설정해 주세요.</FormHelperText>

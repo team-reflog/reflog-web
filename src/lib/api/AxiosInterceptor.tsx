@@ -14,7 +14,7 @@ export const AxiosInterceptor = ({children}: { children: any }) => {
         if (loggedIn) {
             config.headers.Authorization = `Bearer ${session.accessToken}`;
         }
-        console.log(config.headers.Authorization)
+        config.headers["Time-Zone"] = "Asia/Seoul";
         return config;
     };
 
