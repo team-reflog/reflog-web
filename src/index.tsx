@@ -5,15 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ChakraProvider} from "@chakra-ui/react";
 import {BrowserRouter} from "react-router-dom";
+import {AxiosInterceptor} from "./lib/api/AxiosInterceptor";
+import {RecoilRoot} from "recoil";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
     <ChakraProvider>
-        <BrowserRouter>
-            <App/>
-        </BrowserRouter>
+        <RecoilRoot>
+            <AxiosInterceptor>
+                <BrowserRouter>
+                    <App/>
+                </BrowserRouter>
+            </AxiosInterceptor>
+        </RecoilRoot>
     </ChakraProvider>
 );
 
